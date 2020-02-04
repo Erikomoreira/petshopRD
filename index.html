@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript</title>
 </head>
+
 <body>
+
+    <p id="mensagem" style="font-size: 20px;"></p>
 
     <script>
 
@@ -22,24 +26,50 @@
             peso: 65,
             cor: "Branco",
             dono: "Erik",
-            vacinado: true,
-            sevicos: ["Banho", "Tosa"]
-          
+            vacinado: false,
+            sevicos: ["Banho", "Tosa"],
+           
+
         }
 
-        function vacinar(cachorro){
+        function vacinar(cachorro) {
             // implementar a função
 
-            if(cachorro.vacinado){
+            if (cachorro.vacinado) {
                 console.log("O cachorro já está vacinado")
-            }else{
-                cachorro.vacinado=true;
+            } else {
+                cachorro.vacinado = true;
                 console.log("Vacina aplicada com sucesso")
             }
-          
+
         }
 
+        function vacinado(cachorro) {
+            // implementar a função
+            var resultado;
+
+            if (cachorro.vacinado) {
+                resultado = "O cachorro já está vacinado!!";
+            } else {
+                cachorro.vacinado = true;
+                resultado = "Vacina aplicada com sucesso!!";
+            }
+
+            return resultado;
+
+        }
+
+        document.getElementById("mensagem").innerHTML = vacinado(cachorro);
+        document.write(vacinado(cachorro));
+        window.alert("Bem vindo ao Pet Shop")
+
+        var min = Number.MIN_VALUE;
+        var max = Number.MAX_VALUE;
+
+        console.log("Menor " + min + " Maior " + max);
+
     </script>
-    
+
 </body>
+
 </html>
